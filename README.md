@@ -73,3 +73,14 @@ Based on these results, we can conclude that PCA with this number of components 
 
 *   The superior performance of the XGBoost model suggests it is the most suitable model among those evaluated for predicting melting points based on the provided group contribution features. Further optimization of the XGBoost model's hyperparameters could potentially improve performance.
 *   Investigating the specific chemical significance of the top-ranked features identified by XGBoost (e.g., "Group 373", "Group 129", "Group 15") could provide valuable chemical insights into the factors most influencing melting points.
+*  The evaluation_df DataFrame contains the performance metrics for the Linear Regression, Random Forest, default XGBoost, and tuned XGBoost models on the validation set.
+
+Looking at the table:
+
+MAE (Mean Absolute Error): This is the primary metric for the competition (lower is better). The Tuned XGBoost model has the lowest MAE (35.86), followed closely by the Default XGBoost (36.11), Random Forest (36.49), and Linear Regression (36.90).
+MSE (Mean Squared Error): This metric penalizes larger errors more (lower is better). The Tuned XGBoost model also has the lowest MSE (2951.27).
+RMSE (Root Mean Squared Error): This is in the same units as the target variable and represents typical prediction error (lower is better). Again, the Tuned XGBoost model has the lowest RMSE (54.33).
+R2 (R-squared): This represents the proportion of variance explained by the model (higher is better). The Tuned XGBoost model has the highest R2 score (0.61).
+Based on these metrics, particularly the MAE which is the competition's scoring metric, the Tuned XGBoost model is the best performing model among those we have evaluated so far on the validation set.
+
+This analysis confirms that hyperparameter tuning improved the performance of the XGBoost model, making it the most suitable model for this task among the ones I've tried. 
